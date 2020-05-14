@@ -1,0 +1,15 @@
+data = [
+  {
+    input: ["hello", "hello bot", "howdy", "hi"],
+    output: ["Howdy!", "Hello...", "Hi Human"]
+  },
+
+  {
+    input: ["whats up"],
+    output: ["They Sky!"]
+  },
+  {
+    input: ["hows it going", "how are you"],
+    output: ["I'm a computer, I have no emotions...", "I would be good if I had the capacity to feel."]
+  }
+]
