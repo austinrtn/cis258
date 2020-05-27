@@ -1,0 +1,2 @@
+Thumbnails for poll
+Poll: 
