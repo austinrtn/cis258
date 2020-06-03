@@ -1,16 +1,17 @@
 /*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
- ---------------------- Initializing  ------------------
- _______________________________________________________*/
+---------------------- Initializing  ------------------
+_______________________________________________________*/
 
- /*These are the responses from the bot when it does not recognize the input*/
- var nullResponses = ["Sorry, I don't know how to respond to that.",
+/*These are the responses from the bot when it does not recognize the input*/
+var nullResponses = ["Sorry, I don't know how to respond to that.",
                      "I'm not sure I understand",
                      "Can you try asking me in a differnt way?"];
 
- printInputs();
- 
+var welcomeMsg = "Welcome to chatbot!  You can ask me questions about our services and company.  Type 'Help' for more information.";
+var onWelcomeMsg = true;
+
  /********************
- ****HTML Connection***
+ ****HTML Connection**
  *******************/
 
 /* In order to get input from the user and display output,
@@ -19,6 +20,7 @@ we need to get the contents of the HTML elements */
 const output = document.getElementById("output");
 const input = document.getElementById("input");
 const breakline = "\n";
+
 
 /*This function returns the text from the input and
 converts all letters to lowercase so that there is no
@@ -39,6 +41,8 @@ var getInput = function(){
  ---------------------- Main Functionality  -----------------
  _______________________________________________________*/
 
+output.innerHTML = welcomeMsg;
+
 function searchJson(){
   /*If the input field is empty, it will return this message*/
   if(getInput() === "") return "The input field is blank";
@@ -48,7 +52,10 @@ function searchJson(){
       // This searches through the JSON file to see if there's a match
       if(data[i].input[x] === getInput()){
         // If there's a match, the output from the JSON object is returned
-        return data[i].output[Math.floor(Math.random()*data[i].output.length)];
+        if(data[i].output[0].includes("$"))
+          return getAdvancedResponse(data[i].output[0]); // See advanced responses for more information
+        else
+          return data[i].output[Math.floor(Math.random()*data[i].output.length)];
       }
     }
   }
@@ -57,6 +64,10 @@ function searchJson(){
 }
 
 function logChat(text, isUser){
+  if(onWelcomeMsg){
+    output.innerHTML = "";
+    onWelcomeMsg = false;
+  }
  /*This function outputs text to the chat and formats the in a "chat like" way*/
  var name = "Chat Bot: ";
  var extraBreakline = "\n"; //If the bot is outputing, there will be extra space in the log
@@ -77,10 +88,23 @@ function outputResponse(){
   input.value = "";
 }
 
-function printInputs(){
-  for(var i = 0; i < data.length; i++){
-    for(var x = 0; x < data[i].input.length;x++)
-      document.getElementById("list").innerHTML += ("<li>"+data[i].input[x]+"</li>")
+/*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+ ---------------------- Advancded Responses  ---------------
+ _______________________________________________________*/
+
+/*Unfortunatly, JSON does not have the capacity to provide data that's not outside the file
+(for example the current date and time) and so to create interactive responses, we need to incorperate
+JavaScript.  When the engine finds a response that has the '$' character, it runs the getAdvancedResponse()
+function instead of doing what it typically does by outputing the response from the JSON file*/
+
+function getAdvancedResponse(str){
+  if(str == "$date"){
+    var today = new Date();
+    return "Today is " + (today.getMonth()+1)+'-'+today.getDate() +'-'+  today.getFullYear();
+  }
+  else if(str == "$time"){
+    var date = new Date();
+    return "The current time is " + date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
   }
 }
 

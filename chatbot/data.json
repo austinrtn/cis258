@@ -1,7 +1,7 @@
 data = [
   {
     input: ["hello", "hello bot", "howdy", "hi"],
-    output: ["Howdy!", "Hello...", "Hi Human"]
+    output: ["Howdy!", "Hello!", "Hi Human!"]
   },
 
   {
