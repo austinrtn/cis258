@@ -2,6 +2,7 @@
 ---------------------- Initializing  ------------------
 _______________________________________________________*/
 
+
 /*These are the responses from the bot when it does not recognize the input*/
 var nullResponses = ["Sorry, I don't know how to respond to that.",
                      "I'm not sure I understand",
