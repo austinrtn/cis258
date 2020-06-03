@@ -3,13 +3,32 @@ data = [
     input: ["hello", "hello bot", "howdy", "hi"],
     output: ["Howdy!", "Hello!", "Hi Human!"]
   },
-
-  {
-    input: ["whats up"],
-    output: ["They Sky!"]
-  },
   {
     input: ["hows it going", "how are you"],
-    output: ["I'm a computer, I have no emotions...", "I would be good if I had the capacity to feel."]
+    output: ["I\"m a computer, I have no emotions...", "I would be good if I had the capacity to feel."]
+  },
+  {
+    input: ["appointment", "appointment", "how do i schedule an appointment"],
+    output: ["For an appointment please email heroncounselling@yahoo.com or call 416-843-9309."]
+  },
+  {
+    input: ["cost", "how much", "how much do the services it cost"],
+    output: ["For individuals, the cost is $150/60 minute session (includes HST)."]
+  },
+  {
+    input: ["payment", "how do i pay"],
+    output: ["Fees are payable by cheque, credit card or cash at the beginning of the session."]
+  },
+  {
+    input: ["cancel", "cancelation", "what is the cancelation policy"],
+    output: ["All sessions must be cancelled 24 hours in advance in order to recieve a refund."]
+  },
+  {
+    input: ["how long does it take to see results"],
+    output: ["Most goals can be achieved in 8-12 sessions."]
+  },
+  {
+    input: ["help"],
+    output: ["You can ask me: \"How do I schedule an appointment?\", \"How much do the services cost?\",  \"What is the cancelation policy?\", \"How long does it take to see results?\""]
   }
 ]
