@@ -12,7 +12,7 @@ data = [
     output: ["For an appointment please email heroncounselling@yahoo.com or call 416-843-9309."]
   },
   {
-    input: ["cost", "how much", "how much do the services it cost"],
+    input: ["cost", "how much", "how much do the services cost"],
     output: ["For individuals, the cost is $150/60 minute session (includes HST)."]
   },
   {
