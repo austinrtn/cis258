@@ -1,6 +1,17 @@
 /*‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 ---------------------- Initializing  ------------------
 _______________________________________________________*/
+const settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://type.fit/api/quotes",
+  "method": "GET"
+}
+
+$.ajax(settings).done(function (response) {
+  const data = JSON.parse(response);
+  console.log(data);
+});
 
 /*These are the responses from the bot when it does not recognize the input*/
 var nullResponses = ["Sorry, I don't know how to respond to that.",
