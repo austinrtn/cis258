@@ -66,7 +66,7 @@ img {
 	display: block;
 	font: 15px/30px 'Play';
 	height: 20px;
-	width: 76px;
+	width: 80px;
 	padding-top: 68px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -400,4 +400,8 @@ p a {
 }
 #connect a.tumbler:hover {
 	background-position: -40px -120px;
+}
+
+.homeList:hover{
+	font-size: 24px;
 }
