@@ -62,13 +62,14 @@
 		</h2>
 		<br><br>
 	<h2><b>Quote of the day: </b></h2>
-	<h4 id="quotes">
+	<p id="quotes">
 		<script type="text/javascript">
 			fetch("https://quote-garden.herokuapp.com/api/v2/quotes/random").then(res => res.json()).then(quote => {
-				document.getElementById("quotes").innerHTML = (quote.quote.quoteText)  + "<br>";
+				document.getElementById("quotes").innerHTML = ("\"" + quote.quote.quoteText + "\"")  + "<br>-" + quote.quote.quoteAuthor;
 			});
 		</script>
-	</h4>
+	</p>
+
 	<div id="footer">
 		<div class="clearfix">
 			<div id="connect">
