@@ -5,7 +5,7 @@
     <!--Placeholder-->
 	<title>Women's Phycotherapy</title>
     <link rel="stylesheet" href="css/style.css">
-    
+
         <!--Class for the header-->
         <div id="header">
             <div>
@@ -29,17 +29,17 @@
                     <li>
                         <a href="contact.html">Contact</a>
                     </li>
-              
+
                 </ul>
             </div>
         </div>
 
-   
+
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
 	<script type="text/javascript">
 	   (function(){
 		  emailjs.init("user_QHP7GpnvuQe2PB5mrfbqM");
-		  
+
 	   })();
 	</script>
      <script type="text/javascript">
@@ -56,15 +56,16 @@
 <body>
 
     <main>
-
+      <h1>Contact Us</h1>
+      <p>Please leave your name, email, and a quick message and we will respond within 48 hours.  Thank you!</p>
         <form id="contact-form">
             <input type="hidden" name="contact_number">
-            <label>Name</label>
-            <input type="text" name="user_name">
-            <label>Email</label>
-            <input type="email" name="user_email">
-            <label>Message</label>
-            <textarea name="message"></textarea>
+            <input type="text" placeholder="Name" name="user_name">
+            <br>
+            <input type="email" placeholder="Email" name="user_email">
+            <br>
+            <input placeholder="Message" name="message">
+            <br>
             <input type="submit" value="Send">
         </form>
     </main>
